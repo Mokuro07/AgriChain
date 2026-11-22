@@ -1,0 +1,22 @@
+{
+ "admin": {
+  "name": "Admin Operasional",
+  "role": "admin",
+  "pw": "scrypt:32768:8:1$4KnA46gi63Qmo8Zv$6b874e2e6c0996ab493489032bad50901cf4918dfc8b5dbd7d7f6989282d1f352e57e5f09dcb115d5343c613664da21d1bcf46868fa9baf878453da04b8ea6bf"
+ },
+ "user": {
+  "name": "Konsumen",
+  "role": "user",
+  "pw": "scrypt:32768:8:1$1Y5CLpmVlpD7bSxD$d62f166db499129338245a03eb6f41ebb119a2faf63fce228d93fdb9099d27e5440c7f599d878e59451c8b0147c3054bf9e6c3d0c415e28ffe9163067f5a5ded"
+ },
+ "tresa": {
+  "name": "martin_modek",
+  "role": "user",
+  "pw": "scrypt:32768:8:1$0LcdUQe6BBw87H09$a0c107178e239d871c753c7384a9a1b1768c57740a84d8514ab20abe1b8d0b84eb858bbcdc3a45703073d78ab76c5dec55954c4748e23a198228e727b0475f19"
+ },
+ "tamu882": {
+  "name": "Tamu",
+  "role": "user",
+  "pw": "scrypt:32768:8:1$QB0YZVJdSIMUonMt$30bcf63d61af4819642b2c761c4df38b1a00c142d76aca50f9fca9459fcda6802f651f00ca81d549d2f1985f231aee4c8f7555cd1be82a917245a7d8daf17a5a"
+ }
+}

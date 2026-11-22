@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk — AgriChain</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+    .touch-target { min-height: 44px; min-width: 44px; }
+    :focus-visible { outline: 2px solid #047857; outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 antialiased flex flex-col">
+
+  <main class="flex-1 flex items-center justify-center px-4 py-10">
+    <div class="w-full max-w-md">
+
+      <!-- Brand -->
+      <div class="flex items-center gap-2.5 justify-center mb-8">
+        <div class="w-10 h-10 rounded-xl bg-emerald-700 flex items-center justify-center text-white shadow-sm" aria-hidden="true">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18m0-18C8 3 4 7 4 12c0 4 3 7 8 7m0-19c4 0 8 4 8 9 0 4-3 7-8 7M7 14l5-5 5 5"/>
+          </svg>
+        </div>
+        <div class="text-left">
+          <h1 class="text-base font-bold text-slate-900 leading-tight">AgriChain</h1>
+          <p class="text-[11px] text-slate-500 leading-tight">Ketertelusuran Pangan Organik</p>
+        </div>
+      </div>
+
+      <!-- Kartu login -->
+      <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-7 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900">Masuk</h2>
+        <p class="text-sm text-slate-600 mt-1">Pilih peran lewat akun yang dipakai. Admin bisa mencatat, user hanya membaca.</p>
+
+        {% if registered %}
+        <div class="mt-4 flex items-start gap-2 rounded-lg border border-emerald-300 bg-emerald-50 p-3 text-sm text-emerald-900" role="status">
+          <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span>Akun berhasil dibuat. Silakan masuk dengan username dan password baru.</span>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="mt-4 flex items-start gap-2 rounded-lg border border-rose-300 bg-rose-50 p-3 text-sm text-rose-900" role="alert">
+          <span class="w-5 h-5 rounded-full bg-rose-600 text-white text-xs font-bold flex items-center justify-center shrink-0">!</span>
+          <span>{{ error }}</span>
+        </div>
+        {% endif %}
+
+        <form method="post" action="/login" class="mt-5 space-y-4">
+          <input type="hidden" name="next" value="{{ next_url or '' }}">
+          <div>
+            <label for="username" class="block text-sm font-semibold text-slate-900 mb-1">Username</label>
+            <input type="text" id="username" name="username" required autofocus autocomplete="username"
+                   placeholder="admin atau user"
+                   class="touch-target w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200">
+          </div>
+          <div>
+            <label for="password" class="block text-sm font-semibold text-slate-900 mb-1">Password</label>
+            <input type="password" id="password" name="password" required autocomplete="current-password"
+                   placeholder="••••••••"
+                   class="touch-target w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200">
+          </div>
+          <button type="submit"
+                  class="touch-target w-full px-4 py-3 bg-emerald-700 hover:bg-emerald-800 active:scale-[0.99] text-white text-sm font-semibold rounded-lg shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+            Masuk
+          </button>
+        </form>
+      </div>
+
+      <p class="text-center text-sm text-slate-600 mt-4">
+        Belum punya akun?
+        <a href="/register" class="font-semibold text-emerald-700 hover:text-emerald-900 underline">Daftar sebagai konsumen</a>
+      </p>
+
+    </div>
+  </main>
+
+  <script>
+    function fill(u, p) {
+      document.getElementById('username').value = u;
+      document.getElementById('password').value = p;
+      document.getElementById('password').focus();
+    }
+  </script>
+</body>
+</html>

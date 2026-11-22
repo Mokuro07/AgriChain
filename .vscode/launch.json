@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "SimpleAgriChain (auto-reload)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/app.py",
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "env": {
+        "AGRICHAIN_DEBUG": "1",
+        "AGRICHAIN_PORT": "5000"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "SimpleAgriChain (tanpa reload)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/app.py",
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "env": {
+        "AGRICHAIN_DEBUG": "0",
+        "AGRICHAIN_PORT": "5000"
+      },
+      "console": "integratedTerminal"
+    }
+  ]
+}

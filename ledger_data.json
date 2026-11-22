@@ -1,0 +1,14 @@
+[
+  {
+    "index": 0,
+    "timestamp": "2026-11-08T10:00:00.000000Z",
+    "batch_id": "GENESIS",
+    "actor": "SYSTEM",
+    "data": {
+      "message": "Genesis Block SimpleAgriChain",
+      "version": "1.0.0"
+    },
+    "previous_hash": "0",
+    "current_hash": "43e8bdcc853711e451352ad39cc4011218f9000bb4c46bfe8e712496451b6d2f"
+  }
+]
