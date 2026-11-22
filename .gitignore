@@ -1,0 +1,15 @@
+# Virtual environment lokal
+.venv/
+venv/
+
+# Berkas sementara Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Akun (berisi hash password) dibuat ulang otomatis saat server start
+users.json
+users.json.tmp
+
+# Berkas sementara penulisan ledger
+*.tmp
